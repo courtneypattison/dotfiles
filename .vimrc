@@ -14,6 +14,7 @@ set showcmd                     " Show command in bottom bar
 set wildmenu                    " Visual autocomplete for command menu
 set showmatch                   " Highlight matching [{()}]
 set wrap linebreak nolist       " Break lines without breaking words
+" Change background color after 80 columns (requires colourcolumn in colorscheme)
 let &colorcolumn=join(range(81,999),",")
 
 " Searching
