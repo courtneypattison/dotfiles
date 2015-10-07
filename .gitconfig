@@ -5,3 +5,5 @@
 [user]
 	email = mliscourtney@gmail.com
 	name = mlisccourtney
+[push]
+	default = matching
