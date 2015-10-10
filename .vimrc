@@ -16,8 +16,6 @@ set showmatch                   " Highlight matching [{()}]
 set wrap linebreak nolist       " Break lines without breaking words
 " Change background color after 80 columns (requires colourcolumn in colorscheme)
 let &colorcolumn=join(range(81,999),",")
-set list                        " Displays unprintable characters
-set listchars=trail:១           " Displays ១ for trailing characters
 
 " Searching
 set incsearch                   " Search as characters are entered
