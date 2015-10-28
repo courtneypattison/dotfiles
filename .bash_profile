@@ -1,6 +1,8 @@
 export CLICOLOR=1                               # adds colours to lists
 export PS1="\h:\[\e[0;36m\]\W\[\e[0m\] \u$ "    # adds colour to command prompt
 
+alias grep="grep --color=auto"
+
 # use tr command to move to trash
 function tr () {
   local path
