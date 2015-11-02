@@ -11,3 +11,5 @@
 	name = mlisccourtney
 [push]
 	default = matching
+[core]
+	excludesfile = /Users/Courtney/.gitignore_global
