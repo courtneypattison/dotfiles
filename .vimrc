@@ -41,9 +41,17 @@ autocmd FileType css setlocal ts=2 sts=2 sw=2
 " Allow saving of files as sudo when I forget to start vim using sudo
 cmap w!! w !sudo tee > /dev/null %
 
-" Disable arrow keys 
+" Disable arrow keys
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
+" Function for removing trailing whitespaces using `:Tidy`
+fun! TidyWhitespace()
+    let l:save_cursor = getpos('.')
+    %s/\s\+$//e
+    call setpos('.', l:save_cursor)
+endfun
+command! Tidy call TidyWhitespace()
 
