@@ -27,6 +27,16 @@ set listchars=tab:▸\ ,eol:¬     " Change tab and EOL characters for `:set lis
 " Change background color after 80 columns (requires colorcolumn in colorscheme)
 let &colorcolumn=join(range(81,999),",")
 
+" --- Windows ---------------------------------------------------------------- "
+set splitright                  " Put new buffer to the right of current buffer
+set splitbelow                  " Put new buffer below current buffer
+
+" Open vim help in vertical split window
+cabbrev h vert h
+
+" --- Buffers ---------------------------------------------------------------- "
+set autowrite                   " Write buffer after any next/last commands
+
 " --- Files ------------------------------------------------------------------ "
 filetype on                     " Enable file type detection
 
