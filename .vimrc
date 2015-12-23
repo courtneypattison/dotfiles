@@ -18,9 +18,9 @@ set ignorecase                  " Ignore case when searching
 
 " UI
 set number                      " Show line numbers
+set cursorline                  " So CursorLineNr will be highlighted
 set showcmd                     " Show current command in bottom bar
 set wildmenu                    " Visual autocomplete for command menu
-set wildmode=longest,list,full  " Complete longest string, then ls alternatives
 set showmatch                   " Highlight matching [{()}]
 set wrap linebreak nolist       " Break lines without breaking words
 set encoding=utf-8              " Use UTF-8 encoding
