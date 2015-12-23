@@ -23,20 +23,19 @@ set showcmd                     " Show current command in bottom bar
 set wildmenu                    " Visual autocomplete for command menu
 set showmatch                   " Highlight matching [{()}]
 set wrap linebreak nolist       " Break lines without breaking words
-set encoding=utf-8              " Use UTF-8 encoding
 set listchars=tab:▸\ ,eol:¬,trail:•     " Change characters for `:set list`
 
 " Windows
 set splitright                  " Put new buffer to the right of current buffer
 set splitbelow                  " Put new buffer below current buffer
-set fillchars=vert:\│           " Make vertical split look like a line
 
 " Miscellaneous
 set autowrite                   " Write buffer after any next/last commands
 set mouse=a                     " Enable mouse for window resizing
+set backspace=indent,eol,start  " Delete functions normally in insert mode
 
 " Change background colour after 80 columns; requires colorcolumn in colorscheme
-let &colorcolumn=join(range(81,999),",")
+let &colorcolumn=join(range(81,82),",")
 
 " Open vim help in vertical split window
 cabbrev h vert h
