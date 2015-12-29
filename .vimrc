@@ -33,9 +33,8 @@ set splitbelow                  " Put new buffer below current buffer
 set autowrite                   " Write buffer after any next/last commands
 set mouse=a                     " Enable mouse for window resizing
 set backspace=indent,eol,start  " Delete functions normally in insert mode
-
-" Change background colour after 80 columns; requires colorcolumn in colorscheme
-let &colorcolumn=join(range(81,82),",")
+set textwidth=80                " Set the textwidth to 80 columns
+set colorcolumn=+1,+2           " Add a two column colorstrip after textwidth
 
 " Open vim help in vertical split window
 cabbrev h vert h
@@ -46,9 +45,9 @@ filetype on                     " Enable file type detection
 " Ensure tabs are tabs, not spaces, for make files
 autocmd FileType make setlocal noexpandtab
 
-" Set tabs to two spaces for HTML and CSS files
-autocmd FileType html setlocal ts=2 sts=2 sw=2
-autocmd FileType css setlocal ts=2 sts=2 sw=2
+" Set tabs to two spaces and textwidth to 0 for HTML and CSS files
+autocmd FileType html setlocal ts=2 sts=2 sw=2 tw=0
+autocmd FileType css setlocal ts=2 sts=2 sw=2 tw=0
 
 " Allow saving of files as sudo when I forget to start vim using sudo
 cmap w!! w !sudo tee > /dev/null %
