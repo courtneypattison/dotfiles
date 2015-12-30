@@ -2,7 +2,7 @@
 
 " Colours
 set t_Co=256                    " Enable 256 colours
-colorscheme kawaii256           " Set colorscheme
+colorscheme sea256              " Set colorscheme
 syntax enable                   " Enable syntax highlighting
 
 " Tabs
@@ -48,6 +48,25 @@ autocmd FileType make setlocal noexpandtab
 " Set tabs to two spaces and textwidth to 0 for HTML and CSS files
 autocmd FileType html setlocal ts=2 sts=2 sw=2 tw=0
 autocmd FileType css setlocal ts=2 sts=2 sw=2 tw=0
+
+" Set colorscheme based on the day of the week
+let s:weekday = strftime("%A")
+if s:weekday == "Monday"
+    colorscheme kawaii256
+elseif s:weekday == "Tuesday"
+    colorscheme sorbet256
+elseif s:weekday == "Wednesday"
+    colorscheme sea256
+elseif s:weekday == "Thursday"
+    colorscheme kawaii256
+elseif s:weekday == "Friday"
+    colorscheme sorbet256
+elseif s:weekday == "Saturday"
+    colorscheme sea256
+elseif s:weekday == "Sunday"
+    colorscheme kawaii256
+endif
+unlet s:weekday
 
 " Allow saving of files as sudo when I forget to start vim using sudo
 cmap w!! w !sudo tee > /dev/null %
