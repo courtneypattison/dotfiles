@@ -2,8 +2,26 @@
 
 " Colours
 set t_Co=256                    " Enable 256 colours
-colorscheme sea256              " Set colorscheme
 syntax enable                   " Enable syntax highlighting
+
+" Set colorscheme based on the day of the week
+let s:weekday = strftime("%A")
+if s:weekday == "Monday"
+    colorscheme sorbet256
+elseif s:weekday == "Tuesday"
+    colorscheme sea256
+elseif s:weekday == "Wednesday"
+    colorscheme sea256
+elseif s:weekday == "Thursday"
+    colorscheme ghibli256
+elseif s:weekday == "Friday"
+    colorscheme ghibli256
+elseif s:weekday == "Saturday"
+    colorscheme kawaii256
+elseif s:weekday == "Sunday"
+    colorscheme kawaii256
+endif
+unlet s:weekday
 
 " Tabs
 set tabstop=4                   " No. of spaces that <Tab> counts for in file
@@ -43,30 +61,13 @@ cabbrev h vert h
 filetype on                     " Enable file type detection
 
 " Ensure tabs are tabs, not spaces, for make files
-autocmd FileType make setlocal noexpandtab
+autocmd FileType make setlocal noet
 
 " Set tabs to two spaces and textwidth to 0 for HTML and CSS files
 autocmd FileType html setlocal ts=2 sts=2 sw=2 tw=0
 autocmd FileType css setlocal ts=2 sts=2 sw=2 tw=0
-
-" Set colorscheme based on the day of the week
-let s:weekday = strftime("%A")
-if s:weekday == "Monday"
-    colorscheme kawaii256
-elseif s:weekday == "Tuesday"
-    colorscheme sorbet256
-elseif s:weekday == "Wednesday"
-    colorscheme sea256
-elseif s:weekday == "Thursday"
-    colorscheme kawaii256
-elseif s:weekday == "Friday"
-    colorscheme sorbet256
-elseif s:weekday == "Saturday"
-    colorscheme sea256
-elseif s:weekday == "Sunday"
-    colorscheme kawaii256
-endif
-unlet s:weekday
+" Tabs are tabs and there is no textwidth for txt files
+autocmd FileType txt setlocal noet tw=0
 
 " Allow saving of files as sudo when I forget to start vim using sudo
 cmap w!! w !sudo tee > /dev/null %
