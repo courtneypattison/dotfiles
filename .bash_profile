@@ -5,6 +5,7 @@ export PS1="\h:\[\e[0;36m\]\W\[\e[0m\] \u$ "    # adds colour to command prompt
 
 alias grep="grep --color=auto"                  # adds colour to grep
 alias mv="mv -i"                                # adds check before overwriting
+alias gcc="gcc -Wall -pedantic -std=c99"        # adds a few flags to gcc
 
 # use tr command to move to trash
 function tr () {
@@ -25,3 +26,5 @@ function tr () {
     fi
   done
 }
+
+source ~/perl5/perlbrew/etc/bashrc              # for perlbrew
