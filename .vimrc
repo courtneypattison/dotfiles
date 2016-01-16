@@ -82,7 +82,7 @@ autocmd FileType html setlocal ts=2 sts=2 sw=2 tw=0
 autocmd FileType css setlocal ts=2 sts=2 sw=2 tw=0
 
 " tabs are tabs and there is no textwidth for txt files
-autocmd FileType text setlocal tw=0
+autocmd FileType text setlocal noet tw=0
 
 " allow saving of files as sudo when I forget to start vim using sudo
 cmap w!! w !sudo tee > /dev/null %
