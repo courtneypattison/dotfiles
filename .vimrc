@@ -75,11 +75,12 @@ cabbrev h vert h
 filetype on                     " enable file type detection
 
 " ensure tabs are tabs, not spaces, for make files
-autocmd FileType make setlocal noet
+autocmd FileType make setlocal noet list
 
 " set tabs to two spaces and textwidth to 0 for HTML and CSS files
 autocmd FileType html setlocal ts=2 sts=2 sw=2 tw=0
 autocmd FileType css setlocal ts=2 sts=2 sw=2 tw=0
+autocmd FileType perl setlocal ts=3 sts=3 sw=3
 
 " tabs are tabs and there is no textwidth for txt files
 autocmd FileType text setlocal noet tw=0
