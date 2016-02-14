@@ -46,7 +46,6 @@ function prompt_arrow
     set_color green
   else
     set_color red
-    echo -n "($last_status)-"
   end
 
  echo -n "$__chain_prompt_glyph "
