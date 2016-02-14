@@ -4,9 +4,3 @@ set fish_greeting
 
 alias mv "mv -i"
 
-function tr
-    for arg in $argv
-        mv $arg ~/.Trash/
-    end
-end
-
