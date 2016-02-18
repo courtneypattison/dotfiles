@@ -27,11 +27,11 @@ elseif s:weekday == "Tuesday"
 elseif s:weekday == "Wednesday"
     colorscheme sea256
 elseif s:weekday == "Thursday"
-    colorscheme ghibli256
+    colorscheme forest256
 elseif s:weekday == "Friday"
-    colorscheme ghibli256
+    colorscheme forest256
 elseif s:weekday == "Saturday"
-    colorscheme kawaii256
+    colorscheme ghibli256
 elseif s:weekday == "Sunday"
     colorscheme kawaii256
 endif
