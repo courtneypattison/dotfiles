@@ -1,16 +1,14 @@
 " Courtney Bodi's .vimrc
+
 set nocompatible
 filetype off
-
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
 " plugins
 Plugin 'tpope/vim-commentary'
+Plugin 'wakatime/vim-wakatime'
 
 call vundle#end()
 filetype plugin indent on
@@ -39,10 +37,10 @@ endif
 unlet s:weekday
 
 " tabs
-set tabstop=4                   " No. of spaces that <Tab> counts for in file
-set softtabstop=4               " No. of spaces that <Tab> counts for when <BS>
-set shiftwidth=4                " No. of spaces to use for autoindent
-set expandtab                   " Tabs are spaces
+set tabstop=4                   " no. of spaces that <Tab> counts for in file
+set softtabstop=4               " no. of spaces that <Tab> counts for when <BS>
+set shiftwidth=4                " no. of spaces to use for autoindent
+set expandtab                   " tabs are spaces
 
 " searching
 set incsearch                   " search as characters are entered
@@ -65,7 +63,6 @@ set splitbelow                  " put new buffer below current buffer
 " miscellaneous
 set autowrite                   " write buffer after any next/last commands
 set mouse=a                     " enable mouse for window resizing
-set backspace=indent,eol,start  " delete functions normally in insert mode
 set textwidth=80                " set the textwidth to 80 columns
 set colorcolumn=+1,+2           " add a two column colorstrip after textwidth
 set nrformats=                  " treat numbers as decimals, not octals
@@ -82,6 +79,8 @@ autocmd FileType make setlocal noet list
 " set tabs to two spaces and textwidth to 0 for HTML and CSS files
 autocmd FileType html setlocal ts=2 sts=2 sw=2 tw=0
 autocmd FileType css setlocal ts=2 sts=2 sw=2 tw=0
+
+" set tabs to three spaces for perl files
 autocmd FileType perl setlocal ts=3 sts=3 sw=3
 
 " tabs are tabs and there is no textwidth for txt files
@@ -89,12 +88,6 @@ autocmd FileType text setlocal noet tw=0
 
 " allow saving of files as sudo when I forget to start vim using sudo
 cmap w!! w !sudo tee > /dev/null %
-
-" disable arrow keys
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
 
 " function for removing trailing whitespaces using `:Tidy`
 fun! TidyWhitespace()
@@ -104,4 +97,3 @@ fun! TidyWhitespace()
 endfun
 command! Tidy call TidyWhitespace()
 
-Bundle 'wakatime/vim-wakatime'
