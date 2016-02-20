@@ -1,4 +1,4 @@
-" Courtney Bodi's .vimrc
+" mliscourtney's .vimrc
 
 set nocompatible
 filetype off
@@ -46,6 +46,7 @@ set expandtab                   " tabs are spaces
 set incsearch                   " search as characters are entered
 set hlsearch                    " highlight matches
 set ignorecase                  " ignore case when searching
+set smartcase                   " search becomes sensitive with capitals 
 
 " UI
 set number                      " show line numbers
@@ -54,6 +55,9 @@ set showcmd                     " show current command in bottom bar
 set wildmenu                    " visual autocomplete for command menu
 set showmatch                   " highlight matching [{()}]
 set wrap linebreak nolist       " break lines without breaking words
+set autoindent                  " copy indent from line when starting new line
+set textwidth=80                " set the textwidth to 80 columns
+set colorcolumn=+1,+2           " add a two column colorstrip after textwidth
 set listchars=tab:▸\ ,eol:¬,trail:•     " change characters for `:set list`
 
 " windows
@@ -62,16 +66,9 @@ set splitbelow                  " put new buffer below current buffer
 
 " miscellaneous
 set autowrite                   " write buffer after any next/last commands
+set backspace=indent,eol,start  " return works normally in insert mode
 set mouse=a                     " enable mouse for window resizing
-set textwidth=80                " set the textwidth to 80 columns
-set colorcolumn=+1,+2           " add a two column colorstrip after textwidth
 set nrformats=                  " treat numbers as decimals, not octals
-
-" open vim help in vertical split window
-cabbrev h vert h
-
-" files
-filetype on                     " enable file type detection
 
 " ensure tabs are tabs, not spaces, for make files
 autocmd FileType make setlocal noet list
@@ -85,6 +82,9 @@ autocmd FileType perl setlocal ts=3 sts=3 sw=3
 
 " tabs are tabs and there is no textwidth for txt files
 autocmd FileType text setlocal noet tw=0
+
+" open vim help in vertical split window
+cabbrev h vert h
 
 " allow saving of files as sudo when I forget to start vim using sudo
 cmap w!! w !sudo tee > /dev/null %
