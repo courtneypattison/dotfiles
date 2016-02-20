@@ -67,6 +67,7 @@ set mouse=a                     " enable mouse for window resizing
 set backspace=indent,eol,start  " delete functions normally in insert mode
 set textwidth=80                " set the textwidth to 80 columns
 set colorcolumn=+1,+2           " add a two column colorstrip after textwidth
+set nrformats=                  " treat numbers as decimals, not octals
 
 " open vim help in vertical split window
 cabbrev h vert h
