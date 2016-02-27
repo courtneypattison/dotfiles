@@ -56,8 +56,7 @@ set wildmenu                    " visual autocomplete for command menu
 set showmatch                   " highlight matching [{()}]
 set wrap linebreak nolist       " break lines without breaking words
 set autoindent                  " copy indent from line when starting new line
-set textwidth=80                " set the textwidth to 80 columns
-set colorcolumn=+1,+2           " add a two column colorstrip after textwidth
+set colorcolumn="81,82"         " add a two column colorstrip after 80 characters
 set listchars=tab:▸\ ,eol:¬,trail:•     " change characters for `:set list`
 
 " windows
