@@ -55,9 +55,9 @@ set showcmd                     " show current command in bottom bar
 set wildmenu                    " visual autocomplete for command menu
 set showmatch                   " highlight matching [{()}]
 set wrap linebreak nolist       " break lines without breaking words
-set autoindent                  " copy indent from line when starting new line
-set colorcolumn="81,82"         " add a two column colorstrip after 80 characters
+set laststatus=2                " always show status line
 set listchars=tab:▸\ ,eol:¬,trail:•     " change characters for `:set list`
+let &colorcolumn="81,82"        " add a two column colorstrip after 80 characters
 
 " windows
 set splitright                  " put new buffer to the right of current buffer
