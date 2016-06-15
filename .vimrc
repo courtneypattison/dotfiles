@@ -8,33 +8,17 @@ Plugin 'VundleVim/Vundle.vim'
 
 " plugins
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-ragtag'
 Plugin 'wakatime/vim-wakatime'
 
 call vundle#end()
-filetype plugin indent on
+filetype plugin on
 
 " colours
 set t_Co=256                    " enable 256 colours
 syntax enable                   " enable syntax highlighting
-
-" set colorscheme based on the day of the week
-let s:weekday = strftime("%A")
-if s:weekday == "Monday"
-    colorscheme sorbet256
-elseif s:weekday == "Tuesday"
-    colorscheme sea256
-elseif s:weekday == "Wednesday"
-    colorscheme sea256
-elseif s:weekday == "Thursday"
-    colorscheme forest256
-elseif s:weekday == "Friday"
-    colorscheme forest256
-elseif s:weekday == "Saturday"
-    colorscheme ghibli256
-elseif s:weekday == "Sunday"
-    colorscheme kawaii256
-endif
-unlet s:weekday
+colorscheme forest256
 
 " tabs
 set tabstop=4                   " no. of spaces that <Tab> counts for in file
@@ -68,25 +52,32 @@ set autowrite                   " write buffer after any next/last commands
 set backspace=indent,eol,start  " return works normally in insert mode
 set mouse=a                     " enable mouse for window resizing
 set nrformats=                  " treat numbers as decimals, not octals
+set history=200                 " record last 200 commands
 
 " ensure tabs are tabs, not spaces, for make files
 autocmd FileType make setlocal noet list
 
 " set tabs to two spaces and textwidth to 0 for HTML and CSS files
-autocmd FileType html setlocal ts=2 sts=2 sw=2 tw=0
+autocmd FileType html setlocal ts=2 sts=2 sw=2
 autocmd FileType css setlocal ts=2 sts=2 sw=2 tw=0
 
-" set tabs to three spaces for perl files
-autocmd FileType perl setlocal ts=3 sts=3 sw=3
-
-" tabs are tabs and there is no textwidth for txt files
-autocmd FileType text setlocal noet tw=0
+" tabs are tabs for txt files
+autocmd FileType text setlocal noet
 
 " open vim help in vertical split window
 cabbrev h vert h
 
+" %% in command line prompt expands to path of active buffer
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
 " allow saving of files as sudo when I forget to start vim using sudo
 cmap w!! w !sudo tee > /dev/null %
+
+" mappings to quickly traverse lists
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
 
 " function for removing trailing whitespaces using `:Tidy`
 fun! TidyWhitespace()

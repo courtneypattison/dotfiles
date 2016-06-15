@@ -1,0 +1,77 @@
+<C-o>	Switch to Insert Normal mode - Insert
+<C-u>	Delete back to start of line - Insert
+<C-w>	Delete back one word - Insert
+<C-r>	Paste from register - Insert
+<C-r>=	Opens a prompt for an expression - Insert
+<C-v>{123}	Insert character by decimal code - Insert
+<C-v>{1234}	Insert character by hexadecimal code - Insert
+<C-v>{nondigit}	Insert nondigit e.g., <Tab> - Insert
+<C-k>{char1}{char2}	Insert digraph character - Insert
+<C-k>{char1}{char2}	Insert digraph character - Insert
+gv	Reselect the last visual selection - Visual
+o	Go to other end of highlighted text - Visual
+:[range]d [x]	Delete specified lines [into register x]
+:[range]y [x]	Yank specified lines into register x
+:[line]pu [x]	Put register x text after [line]
+:[range]co {address}	Copy range to below {address}
+:[range]t {address}	Shorthand for :co
+:[range]t.	Copy [range] to just below current line
+:t[line]	Copy current line to just below [line]
+:t$	Copy current line to the end of the file
+:[range]t0	Copy [range] to the start of the file
+:[range]m	{address} Move range to below {address}
+:[range]j	Join the specified lines
+:[range]norm {commands}	Execute normal mode {commands} for each line in [range]
+:[range]norm .	Repeat last normal mode command for each line in [range]
+:[range]s/{pattern}/{string}/{flags}	Replace occurences of {pattern} with {string} for [range]
+:[range]g/{pattern}/[cmd]	Execute an Ex [cmd] for [range] where the {pattern} matches
+:[line]d	Performs addition on number at or after cursor
+:/{addres1}/,/{address2}/[cmd]	Execute and Ex [cmd] from {address1} to {address2}
+:<C-w>o	Only keep the active window (close all others)
+:<C-d>	Show all Ex command options
+:<C-r><C-w>	Insert current word from document to the command prompt
+:!{cmd}	Execute {cmd} with the shell
+:r !{cmd}	Execute {cmd} in the shell and insert its standard output below cursor
+:[range]w !{cmd}	Execute {cmd} in the shell with [range] lines as standard input
+:[range]!{filter}	Filter the [range] through external program {filter}
+:b {bufname}	Go to {bufname} in buffer list
+:tabc	Close current tab and all of its windows
+:tabo	Keep current tab only (close all others)
+:%%	Expand to file path of active buffer
+:f {filename}	Open a file without path (need to :set path+={dir}/**)
+:e.	Open file explorer for current working directory
+q/	Open the command-line window with history of searches
+q:	Open the command-line window with history of Ex commands
+@:	Repeat last Ex command
+@@	Repeat last Ex command executed by @:
+1	Address of first line of file
+$	Address of last line of file
+0	Address of virtual line above first line of file
+.	Address of line where cursor is placed
+\'m	Address of line containing mark m
+\'m	Address of line containing mark m
+'<	Address of start of visual selection
+'>	Address of end of visual selection
+%	Address of entire file
+<C-a>	Performs addition on number at or after cursor
+<C-x>	Performs subtraction on number at or after cursor
+<C-^>	Toggle between current and alternate files
+[b	Go to previous buffer in buffer list
+]b	Go to next buffer in buffer list
+[B	Go to first buffer in buffer list
+]B	Go toRlast buffer in buffer list
+s	Delete character and start insert
+R	Each character you type replaces existing character
+ge	Move backward to end of previous word
+.	Repeat last change
+;	Repeat latest f, t, F, or T
+,	Repeat latest f, t, F, or T in opposite direction
+@x	Repeat a sequence of changes
+qx{changes}q	execute a sequence of changes
+~	Swap a single letter\'s case
+g~	Swap case
+gu	Make lowercase
+gU	Make uppercase
+=	Autoindent
+db	Delete from cursor\'s position to beginning of word
+*	Search for the next occurrence word under the cursor
