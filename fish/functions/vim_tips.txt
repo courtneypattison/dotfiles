@@ -25,7 +25,7 @@ o	Go to other end of highlighted text - Visual
 :[range]norm .	Repeat last normal mode command for each line in [range]
 :[range]s/{pattern}/{string}/{flags}	Replace occurences of {pattern} with {string} for [range]
 :[range]g/{pattern}/[cmd]	Execute an Ex [cmd] for [range] where the {pattern} matches
-:[line]d	Performs addition on number at or after cursor
+:[range]d[elete] [x] {count}	Delete [range] lines (default: current line) [into register x]
 :/{addres1}/,/{address2}/[cmd]	Execute and Ex [cmd] from {address1} to {address2}
 :<C-w>o	Only keep the active window (close all others)
 :<C-d>	Show all Ex command options
