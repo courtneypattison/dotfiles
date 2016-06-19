@@ -67,6 +67,9 @@ autocmd FileType text setlocal noet
 " open vim help in vertical split window
 cabbrev h vert h
 
+" enable matchit plugin
+runtime macros/matchit.vim
+
 " %% in command line prompt expands to path of active buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
