@@ -53,6 +53,14 @@ $	Address of last line of file
 '<	Address of start of visual selection
 '>	Address of end of visual selection
 %	Address of entire file
+'<	Jump to start of visual selection
+'>	Jump to end of visual selection
+``	Jump to position before the last jump within current file
+`.  Jump to location of last change
+`^  Jump to location of last insertion
+`[  Jump to start of last change or yank
+`]  Jump to end of last change or yank
+% Jump between opening and closing sets of parantheses
 <C-a>	Performs addition on number at or after cursor
 <C-x>	Performs subtraction on number at or after cursor
 <C-^>	Toggle between current and alternate files
