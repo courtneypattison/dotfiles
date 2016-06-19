@@ -61,8 +61,13 @@ $	Address of last line of file
 `[  Jump to start of last change or yank
 `]  Jump to end of last change or yank
 % Jump between opening and closing sets of parantheses
+g;  Jump back to the position of the previous change
+g,  Jump to the position of the next (newer) change
+gi  Jump to your last insert, then go into insert mode
 <C-a>	Performs addition on number at or after cursor
 <C-x>	Performs subtraction on number at or after cursor
+<C-o>	Jump back through the jump list
+<C-i> Jump forward through the jump list
 <C-^>	Toggle between current and alternate files
 [b	Go to previous buffer in buffer list
 ]b	Go to next buffer in buffer list
