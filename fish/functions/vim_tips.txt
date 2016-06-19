@@ -3,6 +3,8 @@
 <C-w>	Delete back one word - Insert
 <C-r>	Paste from register - Insert
 <C-r>=	Opens a prompt for an expression - Insert
+<C-r>"	Insert contents of unnamed register - Insert
+<C-r>0	Insert contents of yank register - Insert
 <C-v>{123}	Insert character by decimal code - Insert
 <C-v>{1234}	Insert character by hexadecimal code - Insert
 <C-v>{nondigit}	Insert nondigit e.g., <Tab> - Insert
@@ -44,6 +46,7 @@ q/	Open the command-line window with history of searches
 q:	Open the command-line window with history of Ex commands
 @:	Repeat last Ex command
 @@	Repeat last Ex command executed by @:
+m{letter} Create a mark at current postion (Capital is global)
 1	Address of first line of file
 $	Address of last line of file
 0	Address of virtual line above first line of file
@@ -64,6 +67,9 @@ $	Address of last line of file
 g;  Jump back to the position of the previous change
 g,  Jump to the position of the next (newer) change
 gi  Jump to your last insert, then go into insert mode
+gf  Jump to filepath under cursor
+gp  Put text after current line (leave cursor at the end of pasted text)
+gP  Put text before current line (leave cursor at the end of pasted text)
 <C-a>	Performs addition on number at or after cursor
 <C-x>	Performs subtraction on number at or after cursor
 <C-o>	Jump back through the jump list
@@ -74,6 +80,12 @@ gi  Jump to your last insert, then go into insert mode
 [B	Go to first buffer in buffer list
 ]B	Go toRlast buffer in buffer list
 s	Delete character and start insert
+xp  Transpose the next two characters
+"_  Black hole register where contents are deleted
+"0  Yank register (last yanked item is here)
+"+ System clipboard register
+p Put text from register after the cursor 
+p Put text from register before the cursor 
 R	Each character you type replaces existing character
 ge	Move backward to end of previous word
 .	Repeat last change
