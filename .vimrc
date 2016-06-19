@@ -53,7 +53,7 @@ set backspace=indent,eol,start  " return works normally in insert mode
 set mouse=a                     " enable mouse for window resizing
 set nrformats=                  " treat numbers as decimals, not octals
 set history=200                 " record last 200 commands
-set suffixesadd+=.c,.h          " add file extensions to paths when using gf
+set suffixesadd+=.h             " add file extension to paths when using gf
 
 " ensure tabs are tabs, not spaces, for make files
 autocmd FileType make setlocal noet list
