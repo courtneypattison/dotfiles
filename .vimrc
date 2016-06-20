@@ -67,6 +67,7 @@ set backspace=indent,eol,start  " return works normally in insert mode
 set mouse=a                     " enable mouse for window resizing
 set nrformats=                  " treat numbers as decimals, not octals
 set history=200                 " record last 200 commands
+set suffixesadd+=.h             " add file extension to paths when using gf
 
 " ensure tabs are tabs, not spaces, for make files
 autocmd FileType make setlocal noet list
@@ -80,6 +81,9 @@ autocmd FileType text setlocal noet
 
 " open vim help in vertical split window
 cabbrev h vert h
+
+" enable matchit plugin
+runtime macros/matchit.vim
 
 " %% in command line prompt expands to path of active buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
