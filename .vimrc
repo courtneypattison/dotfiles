@@ -1,9 +1,13 @@
 " mliscourtney's .vimrc
 
-set nocompatible
-filetype off
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
+" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
 " plugins
@@ -11,9 +15,19 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-ragtag'
 Plugin 'wakatime/vim-wakatime'
+Plugin 'sheerun/vim-polyglot'
 
-call vundle#end()
-filetype plugin on
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
 
 " colours
 set t_Co=256                    " enable 256 colours
