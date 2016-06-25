@@ -105,3 +105,5 @@ db	Delete from cursor\'s position to beginning of word
 *	Search for the next occurrence word under the cursor
 \c  Ignore case in search pattern
 \C  Force case sensitivity in search pattern
+\v  Assign special meaning to every symbol except _, numbers, and letters in a search
+\V  In the pattern after \V, only the backslash has special meaning
