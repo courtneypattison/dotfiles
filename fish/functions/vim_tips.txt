@@ -45,7 +45,7 @@ o	Go to other end of highlighted text - Visual
 q/	Open the command-line window with history of searches
 q:	Open the command-line window with history of Ex commands
 @:	Repeat last Ex command
-@@	Repeat last Ex command executed by @:
+@@	Repeat last Ex command executed by @: or last run macro
 m{letter} Create a mark at current postion (Capital is global)
 1	Address of first line of file
 $	Address of last line of file
@@ -91,12 +91,17 @@ ge	Move backward to end of previous word
 .	Repeat last change
 ;	Repeat latest f, t, F, or T
 ,	Repeat latest f, t, F, or T in opposite direction
+q{register}{macro}q  Record a macro
+qx{changes}q	Execute a sequence of changes
+{count}@{register}	Run macro in {register}
 @x	Repeat a sequence of changes
-qx{changes}q	execute a sequence of changes
 ~	Swap a single letter\'s case
 g~	Swap case
 gu	Make lowercase
 gU	Make uppercase
+gU	Make character under cursor uppercase
 =	Autoindent
 db	Delete from cursor\'s position to beginning of word
 *	Search for the next occurrence word under the cursor
+\c  Ignore case in search pattern
+\C  Force case sensitivity in search pattern
