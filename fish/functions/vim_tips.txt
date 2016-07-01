@@ -59,17 +59,17 @@ $	Address of last line of file
 '<	Jump to start of visual selection
 '>	Jump to end of visual selection
 ``	Jump to position before the last jump within current file
-`.  Jump to location of last change
-`^  Jump to location of last insertion
-`[  Jump to start of last change or yank
-`]  Jump to end of last change or yank
-% Jump between opening and closing sets of parantheses
-g;  Jump back to the position of the previous change
-g,  Jump to the position of the next (newer) change
-gi  Jump to your last insert, then go into insert mode
-gf  Jump to filepath under cursor
-gp  Put text after current line (leave cursor at the end of pasted text)
-gP  Put text before current line (leave cursor at the end of pasted text)
+`.	Jump to location of last change
+`^	Jump to location of last insertion
+`[	Jump to start of last change or yank
+`]	Jump to end of last change or yank
+%	Jump between opening and closing sets of parantheses
+g;	Jump back to the position of the previous change
+g,	Jump to the position of the next (newer) change
+gi	Jump to your last insert, then go into insert mode
+gf	Jump to filepath under cursor
+gp	Put text after current line (leave cursor at the end of pasted text)
+gP	Put text before current line (leave cursor at the end of pasted text)
 <C-a>	Performs addition on number at or after cursor
 <C-x>	Performs subtraction on number at or after cursor
 <C-o>	Jump back through the jump list
@@ -80,12 +80,12 @@ gP  Put text before current line (leave cursor at the end of pasted text)
 [B	Go to first buffer in buffer list
 ]B	Go toRlast buffer in buffer list
 s	Delete character and start insert
-xp  Transpose the next two characters
-"_  Black hole register where contents are deleted
-"0  Yank register (last yanked item is here)
-"+ System clipboard register
-p Put text from register after the cursor 
-p Put text from register before the cursor 
+xp	Transpose the next two characters
+"_	Black hole register where contents are deleted
+"0	Yank register (last yanked item is here)
+"+	System clipboard register
+p	Put text from register after the cursor
+p	Put text from register before the cursor
 R	Each character you type replaces existing character
 ge	Move backward to end of previous word
 .	Repeat last change
@@ -100,3 +100,11 @@ gU	Make uppercase
 =	Autoindent
 db	Delete from cursor\'s position to beginning of word
 *	Search for the next occurrence word under the cursor
+\1	Capture text inside first set of parentheses in last very magic regex
+<{word}>	Define boudaries of {word} in very magic regex
+\w	Word character class (matches letters, numbers, and _)
+\W	Character class that matches everything except word characters
+\zs	Next char in regex is start of highlight for match
+\ze	Previous char in regex is the last highlighted char in match
+?{pattern}	Search for {pattern} backward through document
+/{pattern}	Search for {pattern} forward through document

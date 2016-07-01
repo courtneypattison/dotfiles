@@ -15,7 +15,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-ragtag'
 Plugin 'wakatime/vim-wakatime'
-Plugin 'sheerun/vim-polyglot'
+" Plugin 'sheerun/vim-polyglot'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -90,6 +90,9 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " allow saving of files as sudo when I forget to start vim using sudo
 cmap w!! w !sudo tee > /dev/null %
+
+" mute search highlighting with <C-l>
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 " mappings to quickly traverse lists
 nnoremap <silent> [b :bprevious<CR>
