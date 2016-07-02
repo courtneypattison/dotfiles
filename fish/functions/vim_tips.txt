@@ -10,6 +10,30 @@
 <C-v>{nondigit}	Insert nondigit e.g., <Tab> - Insert
 <C-k>{char1}{char2}	Insert digraph character - Insert
 <C-k>{char1}{char2}	Insert digraph character - Insert
+<C-n> Autocomplete with generic words - Insert
+<C-n><C-p>  Filter autocomplete word list in real time - Insert
+<C-x><C-n>  Autocomplete with current buffer keywords - Insert
+<C-x><C-i>  Autocomplete with included file keywords - Insert
+<C-x><C-]>  Autocomplete with tags file keywords - Insert
+<C-x><C-k>  Autocomplete with dictionary lookup - Insert
+<C-x><C-l>  Autocomplete whole line - Insert
+<C-x><C-f>  Autocomplete filename - Insert
+<C-x><C-o>  Omni-completion - Insert
+<C-x>s  Jump to misspelled word and open autocomplete menu - Insert
+<C-n> Use next match from word list - Pop-Up Menu
+<C-p> Use previous match from word list - Pop-Up Menu
+<C-y> Accept currently selected match - Pop-Up Menu
+<C-e> Exit from autocompletion - Pop-Up Menu
+<C-h> Delete one character from current match - Pop-Up Menu
+<C-l> Add one character from current match - Pop-Up Menu
+]s  Jump to next spelling error - Spell
+[s  Jump to previous spelling error - Spell
+z=  Suggest corrections for current word - Spell
+zg  Add current word to spell file - Spell
+zw  Remove current word from spell file - Spell
+zug Revert zg or zw command for current word - Spell
+:set spell  Run spell checker - Spell
+:set spelllang=en_ca  Set spell checker to Canadian English - Spell
 gv	Reselect the last visual selection - Visual
 o	Go to other end of highlighted text - Visual
 :[range]d [x]	Delete specified lines [into register x]
