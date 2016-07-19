@@ -8,7 +8,7 @@
   dump = cat-file -p
 [user]
 	email = mliscourtney@gmail.com
-	name = mlisccourtney
+	name = courtneypattison
 [push]
 	default = matching
 [core]

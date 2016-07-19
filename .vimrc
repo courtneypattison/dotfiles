@@ -14,7 +14,11 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-repeat'
 Plugin 'wakatime/vim-wakatime'
+Plugin 'nelstrom/vim-visual-star-search' 
+
 " Plugin 'sheerun/vim-polyglot'
 
 " All of your Plugins must be added before the following line
@@ -66,7 +70,7 @@ set autowrite                   " write buffer after any next/last commands
 set backspace=indent,eol,start  " return works normally in insert mode
 set mouse=a                     " enable mouse for window resizing
 set nrformats=                  " treat numbers as decimals, not octals
-set history=200                 " record last 200 commands
+set history=5000                " record last 200 commands
 set suffixesadd+=.h             " add file extension to paths when using gf
 
 " ensure tabs are tabs, not spaces, for make files
@@ -87,6 +91,12 @@ runtime macros/matchit.vim
 
 " %% in command line prompt expands to path of active buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" autocomplete path to active buffer for opening new files
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
+map <leader>et :tabe %%
 
 " allow saving of files as sudo when I forget to start vim using sudo
 cmap w!! w !sudo tee > /dev/null %

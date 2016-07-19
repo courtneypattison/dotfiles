@@ -10,7 +10,6 @@
 <C-v>{nondigit}	Insert nondigit e.g., <Tab> - Insert
 <C-k>{char1}{char2}	Insert digraph character - Insert
 <C-k>{char1}{char2}	Insert digraph character - Insert
-gv	Reselect the last visual selection - Visual
 o	Go to other end of highlighted text - Visual
 :[range]d [x]	Delete specified lines [into register x]
 :[range]y [x]	Yank specified lines into register x
@@ -42,6 +41,8 @@ o	Go to other end of highlighted text - Visual
 :%%	Expand to file path of active buffer
 :f {filename}	Open a file without path (need to :set path+={dir}/**)
 :e.	Open file explorer for current working directory
+:%s///gn	Count matches for current pattern
+:[range]&&	Repeat last substitution with same flags for [range]
 q/	Open the command-line window with history of searches
 q:	Open the command-line window with history of Ex commands
 @:	Repeat last Ex command
@@ -51,8 +52,8 @@ m{letter} Create a mark at current postion (Capital is global)
 $	Address of last line of file
 0	Address of virtual line above first line of file
 .	Address of line where cursor is placed
-\'m	Address of line containing mark m
-\'m	Address of line containing mark m
+'m	Address of line containing mark m
+'m	Address of line containing mark m
 '<	Address of start of visual selection
 '>	Address of end of visual selection
 %	Address of entire file
@@ -63,13 +64,19 @@ $	Address of last line of file
 `^	Jump to location of last insertion
 `[	Jump to start of last change or yank
 `]	Jump to end of last change or yank
-%	Jump between opening and closing sets of parantheses
 g;	Jump back to the position of the previous change
 g,	Jump to the position of the next (newer) change
 gi	Jump to your last insert, then go into insert mode
 gf	Jump to filepath under cursor
 gp	Put text after current line (leave cursor at the end of pasted text)
 gP	Put text before current line (leave cursor at the end of pasted text)
+gv	Reselect the last visual selection
+ge	Move backward to end of previous word
+g~	Swap case
+gu	Make lowercase
+gU	Make uppercase
+gU	Make character under cursor uppercase
+g&	Repeat last substitute with last search pattern on ALL lines with same flags
 <C-a>	Performs addition on number at or after cursor
 <C-x>	Performs subtraction on number at or after cursor
 <C-o>	Jump back through the jump list
@@ -87,7 +94,6 @@ xp	Transpose the next two characters
 p	Put text from register after the cursor
 p	Put text from register before the cursor
 R	Each character you type replaces existing character
-ge	Move backward to end of previous word
 .	Repeat last change
 ;	Repeat latest f, t, F, or T
 ,	Repeat latest f, t, F, or T in opposite direction
@@ -96,22 +102,19 @@ qx{changes}q	Execute a sequence of changes
 {count}@{register}	Run macro in {register}
 @x	Repeat a sequence of changes
 ~	Swap a single letter\'s case
-g~	Swap case
-gu	Make lowercase
-gU	Make uppercase
-gU	Make character under cursor uppercase
 =	Autoindent
 db	Delete from cursor\'s position to beginning of word
 *	Search for the next occurrence word under the cursor
-\1	Capture text inside first set of parentheses in last very magic regex
 <{word}>	Define boudaries of {word} in very magic regex
-\w	Word character class (matches letters, numbers, and _)
-\W	Character class that matches everything except word characters
-\zs	Next char in regex is start of highlight for match
-\ze	Previous char in regex is the last highlighted char in match
+\\1	Capture text inside first set of parentheses in last very magic regex
+\\w	Word character class (matches letters, numbers, and _)
+\\W	Character class that matches everything except word characters
+\\zs	Next char in regex is start of highlight for match
+\\ze	Previous char in regex is the last highlighted char in match
+\\c	Ignore case in search pattern
+\\C	Force case sensitivity in search pattern
+\\v	Assign special meaning to every symbol except _, numbers, and letters in a search
+\\V	In the pattern after \V, only the backslash has special meaning
 ?{pattern}	Search for {pattern} backward through document
 /{pattern}	Search for {pattern} forward through document
-\c  Ignore case in search pattern
-\C  Force case sensitivity in search pattern
-\v  Assign special meaning to every symbol except _, numbers, and letters in a search
-\V  In the pattern after \V, only the backslash has special meaning
+/{pattern}/e	Place cursor at the end of {pattern} when searching
