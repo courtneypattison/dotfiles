@@ -1,15 +1,5 @@
-[alias]
-  co = checkout
-  ci = commit
-  st = status
-  br = branch
-  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-  type = cat-file -t
-  dump = cat-file -p
 [user]
-	email = mliscourtney@gmail.com
 	name = courtneypattison
+	email = courtney@courtneypattison.com
 [push]
-	default = matching
-[core]
-	excludesfile = /Users/Courtney/.gitignore_global
+	default = simple

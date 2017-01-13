@@ -1,13 +1,9 @@
 " mliscourtney's .vimrc
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
+set nocompatible
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
 " plugins
@@ -16,22 +12,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-repeat'
-Plugin 'wakatime/vim-wakatime'
-Plugin 'nelstrom/vim-visual-star-search' 
 
-" Plugin 'sheerun/vim-polyglot'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
+call vundle#end()
+filetype plugin indent on
 
 " colours
 set t_Co=256                    " enable 256 colours
@@ -53,6 +36,7 @@ set smartcase                   " search becomes sensitive with capitals
 " UI
 set number                      " show line numbers
 set cursorline                  " so CursorLineNr will be highlighted
+set breakindent                 " wrap lines without changing indent
 set showcmd                     " show current command in bottom bar
 set wildmenu                    " visual autocomplete for command menu
 set showmatch                   " highlight matching [{()}]
@@ -78,25 +62,13 @@ autocmd FileType make setlocal noet list
 
 " set tabs to two spaces and textwidth to 0 for HTML and CSS files
 autocmd FileType html setlocal ts=2 sts=2 sw=2
-autocmd FileType css setlocal ts=2 sts=2 sw=2 tw=0
+autocmd FileType css setlocal ts=2 sts=2 sw=2
 
 " tabs are tabs for txt files
 autocmd FileType text setlocal noet
 
 " open vim help in vertical split window
 cabbrev h vert h
-
-" enable matchit plugin
-runtime macros/matchit.vim
-
-" %% in command line prompt expands to path of active buffer
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-
-" autocomplete path to active buffer for opening new files
-map <leader>ew :e %%
-map <leader>es :sp %%
-map <leader>ev :vsp %%
-map <leader>et :tabe %%
 
 " allow saving of files as sudo when I forget to start vim using sudo
 cmap w!! w !sudo tee > /dev/null %
@@ -117,4 +89,3 @@ fun! TidyWhitespace()
     call setpos('.', l:save_cursor)
 endfun
 command! Tidy call TidyWhitespace()
-
