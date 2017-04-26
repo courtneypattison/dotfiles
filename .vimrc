@@ -60,9 +60,12 @@ set suffixesadd+=.h             " add file extension to paths when using gf
 " ensure tabs are tabs, not spaces, for make files
 autocmd FileType make setlocal noet list
 
-" set tabs to two spaces and textwidth to 0 for HTML and CSS files
+" set tabs to two spaces
 autocmd FileType html setlocal ts=2 sts=2 sw=2
 autocmd FileType css setlocal ts=2 sts=2 sw=2
+autocmd FileType eruby setlocal ts=2 sts=2 sw=2
+autocmd FileType ruby setlocal ts=2 sts=2 sw=2
+autocmd FileType php setlocal ts=2 sts=2 sw=2
 
 " tabs are tabs for txt files
 autocmd FileType text setlocal noet

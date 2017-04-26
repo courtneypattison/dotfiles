@@ -27,3 +27,4 @@ function tr () {
   done
 }
 
+eval "$(rbenv init -)"
