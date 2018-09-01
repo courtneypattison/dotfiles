@@ -5,3 +5,7 @@
 	default = simple
 [credential]
 	helper = osxkeychain
+[merge]
+	tool = vimdiff
+[core]
+	editor = /usr/bin/vim
