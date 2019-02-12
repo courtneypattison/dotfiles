@@ -26,3 +26,6 @@ function trash () {
 }
 
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+ulimit -n 8096
