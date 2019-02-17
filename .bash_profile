@@ -25,7 +25,8 @@ function trash () {
   done
 }
 
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export NPMPATH=$HOME/.npm-packages
+export PATH=$PATH:$GOPATH/bin:/usr/local/opt/python/libexec/bin:$NPMPATH/bin
+
 ulimit -n 8096
