@@ -25,9 +25,9 @@ function trash () {
   done
 }
 
-export GOPATH="$HOME/go"
-export NPMPATH="/usr/local/Cellar/node/11.1.0"
-export PYTHONPATH="/usr/local/opt/python"
-export PATH="$GOPATH/bin:$PYTHONPATH/libexec/bin:$NPMPATH/bin:$PATH"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export GO_PATH="$HOME/go"
+export PYTHON_PATH="/usr/local/opt/python"
+export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$GO_PATH/bin:$PYTHON_PATH/libexec/bin:$(npm bin -g):$PATH"
 
 ulimit -n 8096
