@@ -6,4 +6,5 @@ ln -sf $DIR/.bash_profile ~
 ln -sf $DIR/.gitignore_global ~
 ln -sf $DIR/.gitconfig ~
 ln -sf $DIR/.inputrc ~
+ln -sf $DIR/.zshrc ~
 git config --global core.excludesfile ~/.gitignore_global
