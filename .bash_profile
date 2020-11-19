@@ -25,6 +25,15 @@ function trash () {
   done
 }
 
+function node-project {
+  git init
+  yarn dlx license $(yarn config get init-license) --name "Courtney Pattison"
+  yarn dlx gitignore node
+  yarn init -y
+  git commit -A -m "Initial commit"
+}
+
+
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export GO_PATH="$HOME/go"
 export PYTHON_PATH="/usr/local/opt/python"
@@ -32,3 +41,7 @@ export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/t
 
 ulimit -n 8096
 export PATH="/usr/local/opt/node@10/bin:$PATH"
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export PATH="/usr/local/sbin:$PATH"
+
+export CONTENTFUL_ACCESS_TOKEN="bP0snv9jS9C3u5SNKlqScJwqjPq7BzAXLVcvO5SZxiE"
