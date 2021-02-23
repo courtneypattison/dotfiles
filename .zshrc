@@ -7,11 +7,3 @@ unsetopt BEEP
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 autoload -Uz compinit && compinit
-
-function node-project {
-  git init
-  npx license $(yarn config get init-license) --name "Courtney Pattison"
-  npx gitignore node
-  yarn init -y
-  git add -A && git commit -m "Initial commit"
-}
