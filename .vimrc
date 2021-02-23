@@ -1,20 +1,5 @@
-" mliscourtney's .vimrc
-
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-
-" plugins
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-ragtag'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-repeat'
-
-call vundle#end()
-filetype plugin indent on
 
 " colours
 set t_Co=256                    " enable 256 colours
