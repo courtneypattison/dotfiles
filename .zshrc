@@ -1,4 +1,4 @@
-PROMPT='%F{139}%1d/%f🐈 '
+PROMPT='%F{139}%1d/%f🐝🐈 '
 
 # Turn off all beeps
 unsetopt BEEP
@@ -7,6 +7,15 @@ unsetopt BEEP
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 autoload -Uz compinit && compinit
+
+# python
+export PATH=/usr/local/share/python:$PATH
+
+# virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/opt/homebrew/bin/virtualenv
+source /opt/homebrew/bin/virtualenvwrapper.sh
 
 # Go
 export GOPATH=$HOME/go
